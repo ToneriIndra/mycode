@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Noticebill" table="qp_noticebill" >
+        <id name="id">
+            <generator class="uuid" />
+        </id>
+        <many-to-one name="user" class="cn.zhao.bos.vo.User" lazy="false">
+            <column name="user_id" />
+        </many-to-one>
+        <many-to-one name="staff" class="cn.zhao.bos.vo.Staff" lazy="false">
+            <column name="staff_id" />
+        </many-to-one>
+        <property name="customerId" />
+        <property name="customerName"/>
+        <property name="delegater" />
+        <property name="telephone" />
+        <property name="pickaddress" />
+        <property name="arrivecity" />
+        <property name="product" />
+        <property name="pickdate" />
+        <property name="num" />
+        <property name="weight" />
+        <property name="volume" />
+        <property name="remark" />
+        <property name="ordertype" />
+    </class>
+</hibernate-mapping>

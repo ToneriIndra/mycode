@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Workordermanage" table="qp_workordermanage">
+        <id name="id">
+            <generator class="assigned" />
+        </id>
+        <property name="arrivecity" />
+        <property name="product" />
+        <property name="num" />
+        <property name="weight"/>
+        <property name="floadreqr" />
+        <property name="prodtimelimit"/>
+        <property name="prodtype" />
+        <property name="sendername" />
+        <property name="senderphone"/>
+        <property name="senderaddr" />
+        <property name="receivername" />
+        <property name="receiverphone" />
+        <property name="receiveraddr" />
+        <property name="feeitemnum" />
+        <property name="actlweit" />
+        <property name="vol" />
+        <property name="managerCheck" />
+        <property name="updatetime" />
+        <property name="start"/>
+    </class>
+</hibernate-mapping>

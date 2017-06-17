@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Region" table="bc_region">
+        <id name="id">
+            <generator class="assigned" />
+        </id>
+        <property name="province"/>
+        <property name="city"/>
+        <property name="district"/>
+        <property name="postcode"/>
+        <property name="shortcode"/>
+        <property name="citycode"/>
+    </class>
+</hibernate-mapping>

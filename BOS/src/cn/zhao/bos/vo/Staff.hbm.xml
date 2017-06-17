@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Staff" table="bc_staff">
+        <id name="id" >
+            <generator class="uuid" />
+        </id>
+        <property name="name" />
+        <property name="telephone" />
+        <property name="haspda" />
+        <property name="deltag" />
+        <property name="station" />
+        <property name="standard" />
+    </class>
+    <query name="staff.delete">
+    	UPDATE Staff SET deltag = '1' WHERE id = ?
+    </query>
+    <query name="staff.restore">
+    	UPDATE Staff SET deltag = '0' WHERE id = ?
+    </query>
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Subarea" table="bc_subarea">
+        <id name="id">
+            <generator class="uuid" />
+        </id>
+        <many-to-one name="decidedzone" class="cn.zhao.bos.vo.Decidedzone">
+            <column name="decidedzone_id" />
+        </many-to-one>
+        <many-to-one lazy="false" name="region" class="cn.zhao.bos.vo.Region">
+            <column name="region_id" />
+        </many-to-one>
+        <property name="addresskey"/>
+        <property name="startnum" />
+        <property name="endnum" />
+        <property name="single" />
+        <property name="position" />
+        <property name="subareaId" />
+    </class>
+</hibernate-mapping>

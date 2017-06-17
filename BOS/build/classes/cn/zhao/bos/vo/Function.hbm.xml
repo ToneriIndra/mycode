@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.zhao.bos.vo.Function" table="auth_function" >
+        <id name="id">
+            <generator class="uuid" />
+        </id>
+        <many-to-one name="function" class="cn.zhao.bos.vo.Function" >
+            <column name="pid" />
+        </many-to-one>
+        <property name="name" />
+        <property name="code" />
+        <property name="description" />
+        <property name="page" />
+        <property name="generatemenu" />
+        <property name="zindex" />
+    </class>
+</hibernate-mapping>

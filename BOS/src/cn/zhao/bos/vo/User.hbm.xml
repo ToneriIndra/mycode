@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+
+<hibernate-mapping>
+	
+	<class name="cn.zhao.bos.vo.User" table="t_user" >
+		<id name="id" >
+			<generator class="uuid"/>
+		</id>
+		<property name="username"/>
+		<property name="password"/>
+		<property name="name"/>
+		<property name="salary"/>
+		<property name="birthday"/>
+		<property name="gender"/>
+		<property name="station"/>
+		<property name="telephone"/>
+		<property name="remark"/>
+		 <set name="roles" table="user_role" >
+            <key column="user_id"/>
+            <many-to-many column="role_id" class="cn.zhao.bos.vo.Role"/>
+        </set>
+	</class>
+	<query name="editPwd">
+		update User set password = ? where id = ?
+	</query>
+</hibernate-mapping>
