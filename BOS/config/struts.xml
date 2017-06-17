@@ -20,10 +20,10 @@
 			<result name="exception">/exception.html</result>
 		</global-results>
 		<!-- 全局异常捕获 -->
-		<!-- <global-exception-mappings>
+		<global-exception-mappings>
 			<exception-mapping result="exception" 
 			exception="java.lang.Exception"></exception-mapping>
-		</global-exception-mappings> -->
+		</global-exception-mappings>
 		<action name="userAction_*" class="userAction" method="{1}">
 			<result name="list">/WEB-INF/pages/admin/userlist.jsp</result>
 			<result name="toList" type="redirectAction">userAction_list</result>

@@ -157,7 +157,7 @@
 		<!-- SMTP协议介绍 -->
 		<property name="host" value="smtp.163.com" />
 		<property name="username" value="xswz19900520" />
-		<property name="password" value="xs05201219" />
+		<property name="password" value="******" />
 		<property name="javaMailProperties">
 			<props>
 				<!-- 必须进行授权认证，它的目的就是阻止他人任意乱发邮件 -->
