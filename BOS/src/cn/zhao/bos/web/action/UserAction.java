@@ -44,34 +44,25 @@ public class UserAction extends BaseAction<User> {
 
     public String login() {
         String key = (String) ActionContext.getContext().getSession().get("key");
-      //  if(StringUtils.isNotBlank(checkcode) && checkcode.equals(key)) {
-           /* User user = userService.login(model);
-            if(user == null) {
-                this.addActionError(this.getText("LoginFail"));
-                return "loginFail";
+        if(StringUtils.isNotBlank(checkcode) && checkcode.equals(key)) {
+        	Subject subject = SecurityUtils.getSubject();
+        	String password = model.getPassword();
+        	password = MD5Utils.md5(password);
+        	AuthenticationToken token = new UsernamePasswordToken(model.getUsername(),password);
+			try {
+				subject.login(token);
+			} catch (Exception e) {
+				e.printStackTrace();
+				this.addActionError(this.getText("LoginFail"));
+				return "loginFail";
+			}
+        	User user = (User) subject.getPrincipal();
+        	ActionContext.getContext().getSession().put("loginUser", user);
+        	return "loginSuccess";
             } else {
-                ActionContext.getContext().getSession().put("loginUser", user);
-                return "loginSuccess";
-            }*/
-            Subject subject = SecurityUtils.getSubject();
-            String password = model.getPassword();
-            password = MD5Utils.md5(password);
-            AuthenticationToken token = new UsernamePasswordToken(model.getUsername(),password);
-            try {
-                subject.login(token);
-            } catch(Exception e) {
-                e.printStackTrace();
-                this.addActionError(this.getText("LoginFail"));
-                return "loginFail";
-            }
-            User user = (User) subject.getPrincipal();
-            ActionContext.getContext().getSession().put("loginUser", user);
-            return "loginSuccess";
-            
-       // } else {
-           // this.addActionError(this.getText("CheckCodeError"));
-          //  return "loginFail";
-        //}
+            this.addActionError(this.getText("CheckCodeError"));
+            return "loginFail";
+        }
     }
     
     public String editPwd() throws IOException {
