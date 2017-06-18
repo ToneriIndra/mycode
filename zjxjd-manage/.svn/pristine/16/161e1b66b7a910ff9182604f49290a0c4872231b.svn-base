@@ -1,0 +1,8 @@
+package com.taobao.manage.mapper;
+
+import com.github.abel533.mapper.Mapper;
+import com.taobao.manage.pojo.ItemCat;
+
+public interface ItemCatMapper extends Mapper<ItemCat> {
+    
+}

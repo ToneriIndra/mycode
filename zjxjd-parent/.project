@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>zjxjd-parent</name>
+	<comment></comment>
+	<projects>
+		<project>zjxtb-common</project>
+		<project>zjxtb-manage</project>
+		<project>zjxtb-manage-mapper</project>
+		<project>zjxtb-manage-pojo</project>
+		<project>zjxtb-manage-service</project>
+		<project>zjxtb-manage-web</project>
+	</projects>
+	<buildSpec>
+		<buildCommand>
+			<name>org.eclipse.m2e.core.maven2Builder</name>
+			<arguments>
+			</arguments>
+		</buildCommand>
+	</buildSpec>
+	<natures>
+		<nature>org.eclipse.m2e.core.maven2Nature</nature>
+	</natures>
+</projectDescription>

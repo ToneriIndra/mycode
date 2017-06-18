@@ -1,0 +1,31 @@
+package com.taobao.manage.service;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.taobao.manage.mapper.ItemCatMapper;
+import com.taobao.manage.pojo.ItemCat;
+/**
+ * 业务层
+ * @author Administrator
+ *
+ */
+@Service
+public class ItemCatService {
+    @Autowired
+    private ItemCatMapper icm;
+    /**
+     * 查询商品类目列表
+     * @param parentId 父ID
+     * @return
+     */
+    public List<ItemCat> queryItemCatList(long parentId) {
+        ItemCat record = new ItemCat();
+        record.setParentId(parentId);
+        System.out.println(parentId);
+        return this.icm.select(record);
+    }
+    
+}
